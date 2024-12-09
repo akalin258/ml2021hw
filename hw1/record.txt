@@ -1,0 +1,14 @@
+1.Adam optim, feats=list(range(40))+[45,63,81,75,57]
+Saving model (epoch = 1472, loss = 0.9130)
+
+2.再把cil那几列选上,
+Saving model (epoch = 1068, loss = 0.8262)
+
+3.
+# Normalize features (you may remove this part to see what will happen)
+        self.data[:, 40:] = \
+            (self.data[:, 40:] - self.data[:, 40:].mean(dim=0, keepdim=True)) \
+            / self.data[:, 40:].std(dim=0, keepdim=True)
+重新加上
+Saving model (epoch =  855, loss = 0.7890)
+但是在测试集上表现就不好了
